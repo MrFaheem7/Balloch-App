@@ -1,0 +1,44 @@
+@import "../../../styles/variables.scss";
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+
+  img {
+    width: 25vh;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-left: 20px;
+    height: 70px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  .btn {
+    background-color: $color-green;
+    border: 1px solid $color-green;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+    box-sizing: border-box;
+    color: #fff;
+    padding: 10px;
+    margin-right: 20px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+    outline: 0;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 150ms, box-shadow 150ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+    transform: translateY(-2px);
+  }
+}
