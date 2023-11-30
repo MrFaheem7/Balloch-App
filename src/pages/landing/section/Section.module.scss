@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 3%;
+.section{
+    text-align: center;
+   width: 90%;
+    
+    h1{
+        margin: 0;
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-size: 1.5rem;
+        line-height: 1.334;
+        letter-spacing: 0em;
+        color: rgb(175, 228, 208);
+        font-weight: 700;
+    }
+  
+    span{
+        padding: 10px 0px;
+        margin: 0;
+        color: rgb(153, 153, 167);
+        
+    }
+
+}
+}

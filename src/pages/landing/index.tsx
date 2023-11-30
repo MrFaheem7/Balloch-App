@@ -1,15 +1,13 @@
 import React from 'react'
 import Header from './header/header'
+import MainView from './view/MainView'
+import Section from './section/Section'
 
 const MainPage = () => {
     return (
         <>
-
-            <div>
-                <Header />
-            </div>
-            <main>Main</main>
-            <footer>Footer</footer>
+           <MainView/>
+           <Section/>
         </>
     )
 }
