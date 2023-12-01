@@ -1,0 +1,54 @@
+@import "../../../styles/variables.scss";
+.maincontainer {
+  margin-top: 20px;
+  background-color: $color-green;
+  padding-bottom: 16px;
+  .container {
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .col1 {
+    img {
+      width: 25vh;
+      border: 1px solid grey;
+      border-radius: 10px;
+      margin-left: 20px;
+      height: 70px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  .col3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    width: 25vh;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  span {
+    margin: 0px;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+  p {
+    margin: 0;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  p:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,36 @@
+@import "../../../styles//variables.scss";
+.card {
+  text-align: center;
+  margin-bottom: 4px;
+  background-color: $color-grey-ligtest;
+  color: $color-grey-light;
+  border-radius: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 7%;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.card:hover {
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  margin-top: 7%;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+  width: 90%;
+}
+h1 {
+  margin: 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.334;
+  letter-spacing: 0em;
+  color: $color-light-green;
+  font-weight: 700;
+  padding: 10px;
+}

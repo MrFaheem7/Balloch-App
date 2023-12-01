@@ -1,0 +1,50 @@
+@import "../../../styles//variables.scss";
+.maincontainer {
+  margin-top: 3%;
+  .section {
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .container {
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 8px;
+  }
+  img {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+  }
+  .col1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    text-align: center;
+    margin-bottom: 4px;
+    background-color: $color-grey-ligtest;
+    color: $color-grey-light;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 0px 6px white;
+  }
+  h1 {
+    margin: 0;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.334;
+    letter-spacing: 0em;
+    color: $color-light-green;
+    font-weight: 700;
+    padding: 10px;
+  }
+  p {
+    padding: 8px;
+  }
+}

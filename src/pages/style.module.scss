@@ -1,0 +1,31 @@
+@import "../styles//variables.scss";
+.btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: $color-white;
+  z-index: 999;
+  border: 1px solid $color-white;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: $color-green;
+  margin-right: 9px;
+  margin-bottom: 9px;
+  padding: 10px 24px;
+  cursor: pointer;
+  outline: 0;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 9px 0;
+  transform: translateY(-2px);
+  background-color: $color-green;
+  border: 1px solid $color-green;
+  color: $color-white;
+}
