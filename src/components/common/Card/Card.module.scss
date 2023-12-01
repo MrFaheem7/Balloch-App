@@ -1,17 +1,26 @@
 @import "../../../styles//variables.scss";
-.card {
-  text-align: center;
-  margin-bottom: 4px;
-  background-color: $color-grey-ligtest;
-  color: $color-grey-light;
-  border-radius: 5px;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 7%;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 12px;
+  .card {
+    text-align: center;
+    margin-bottom: 4px;
+    background-color: $color-grey-ligtest;
+    color: $color-grey-light;
+    border-radius: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 7%;
+    transition: transform 0.3s ease;
+    img {
+      width: 30px;
+      margin-top: 1%;
+    }
+  }
 }
 .card:hover {
   border-radius: 10px;
@@ -22,7 +31,6 @@
   transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
   transition: transform 0.2s, -webkit-transform 0.2s;
-  width: 90%;
 }
 h1 {
   margin: 0;

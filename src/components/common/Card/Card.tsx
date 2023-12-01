@@ -1,17 +1,23 @@
-import React from "react";
 import classes from "./Card.module.scss";
-const Card = () => {
+import { ICard } from "../../../models/ICard";
+const Card = ({ cardClassName, src, title, description, ...props }: ICard) => {
+  let cardClass = classes.card;
+  if (cardClassName) {
+    cardClass = `${cardClassName} ${cardClass}`
+  }
   return (
-    <section className={classes.card}>
-      <h1>Choose a Category</h1>
-      <div className={classes.description}>
-        {" "}
-        <p>
-          Browse our treasure trove of categories <br /> in our specialised
-          feature-rich menu.
-        </p>{" "}
-      </div>
-    </section>
+    <div className={classes.container} {...props}>
+      <section className={cardClass}>
+        {src && <div><img src={src} alt="mnm" /></div>}
+        {title && <h1>{title}</h1>}
+        {description && <div className={classes.description}>
+          {" "}
+          <p>
+            {description}
+          </p>{" "}
+        </div>}
+      </section>
+    </div>
   );
 };
 

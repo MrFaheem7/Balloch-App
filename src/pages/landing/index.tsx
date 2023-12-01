@@ -37,7 +37,10 @@ const MainPage = () => {
       <MainView />
       <Section />
       <HowitWorks />
-      <Card />
+      <Card
+        title="dashdksa"
+        description="bsdajgfjs"
+      />
       <footer>
         <Footer />
       </footer>
