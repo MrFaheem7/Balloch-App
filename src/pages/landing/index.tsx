@@ -7,6 +7,7 @@ import classes from "../style.module.scss";
 import arrow from "../../assets/png/arrow.svg";
 import HowitWorks from "./section/HowitWorks";
 import Card from "../../components/common/Card/Card";
+import Button from "../../components/button/button";
 
 const MainPage = () => {
   let mybutton = document.getElementById("btn-back-to-top");
@@ -37,6 +38,7 @@ const MainPage = () => {
       <MainView />
       <Section />
       <HowitWorks />
+      <Button />
       <Card
         title="dashdksa"
         description="bsdajgfjs"
