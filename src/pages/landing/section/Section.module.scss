@@ -1,10 +1,20 @@
 @import "../../../styles/variables.scss";
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   margin-top: 3%;
+
+  .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    flex-wrap: wrap;
+  }
+
   .section {
     text-align: center;
     width: 90%;

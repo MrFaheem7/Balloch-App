@@ -1,37 +1,83 @@
 @import "../../../styles//variables.scss";
+
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 12px;
+  margin: 0px 16px 16px 0px;
+  max-width: 25%;
+  overflow: hidden;
+
+  @media screen and (max-width: 800px) {
+    max-width: 100%;
+    margin-right: 0px;
+  }
+
+
   .card {
     text-align: center;
     margin-bottom: 4px;
     background-color: $color-grey-ligtest;
     color: $color-grey-light;
     border-radius: 5px;
-    padding: 10px;
+    padding: 24px;
     border-radius: 10px;
     cursor: pointer;
-    margin-top: 7%;
-    transition: transform 0.3s ease;
+
     img {
       width: 30px;
       margin-top: 1%;
     }
+
+    p {
+      margin-bottom: 0px;
+    }
+
+    .description {
+      font-size: 14px;
+      color: rgb(153, 153, 167);
+      line-height: 25px;
+      height: 12vh;
+      overflow: hidden;
+
+      &:hover {
+        overflow: visible;
+        height: auto;
+      }
+
+    }
+
+    .title {
+      margin: 4% 0px;
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.334;
+      letter-spacing: 0em;
+      font-weight: 700;
+      font-size: 16px;
+      color: rgb(175, 228, 208);
+    }
+
   }
 }
-.card:hover {
+
+.container:hover {
   border-radius: 10px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-  margin-top: 7%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
-  transition: -webkit-transform 0.2s;
-  transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+  width: 25%;
+  height: auto;
+  overflow: visible;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 100%;
+  }
 }
+
 h1 {
   margin: 0;
   font-family: Roboto, Helvetica, Arial, sans-serif;
@@ -40,5 +86,4 @@ h1 {
   letter-spacing: 0em;
   color: $color-light-green;
   font-weight: 700;
-  padding: 10px;
 }
