@@ -2,70 +2,71 @@ import React from "react";
 import classes from "./Section.module.scss";
 import Card from "../../../components/common/Card/Card";
 import carParking from "../../../assets/png/Car Parking.png";
+import { SERVER_URL } from "../../../utils/helpers";
 
-const KeyFeatures = () => {
-  const data = [
-    {
-      src: carParking,
-      title: "Interactive Map",
-      description:
-        "Discover what the park has to offer with it's many things to see and do with it's interactive map Discover what the park has to offer with it's many things to see and do with it's interactive map",
-    },
-    {
-      src: carParking,
-      title: "Interactive Map",
-      description:
-        "Discover what the park has to offer with it's many things to see and do with it's interactive map Discover what the park has to offer with it's many things to see and do with it's interactive map",
-    },
-    {
-      src: carParking,
-      title: "Interactive Map",
-      description:
-        "Discover what the park has to offer with it's many things to see and do with it's interactive map Discover what the park has to offer with it's many things to see and do with it's interactive map",
-    },
-    {
-      src: carParking,
-      title: "Interactive Map",
-      description:
-        "Discover what the park has to offer with it's many things to see and do with it's interactive map Discover what the park has to offer with it's many things to see and do with it's interactive map",
-    },
-    {
-      src: carParking,
-      title: "Interactive Map",
-      description:
-        "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
-    },
-    {
-      src: carParking,
-      title: "Interactive Map",
-      description:
-        "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
-    },
-    {
-      src: carParking,
-      title: "Interactive Map",
-      description:
-        "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
-    },
-    {
-      src: carParking,
-      title: "Interactive Map",
-      description:
-        "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
-    },
-    {
-      src: carParking,
-      title: "Interactive Map",
-      description:
-        "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
-    },
-    {
-      src: carParking,
-      title: "Interactive Map",
-      description:
-        "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
-    },
-  ];
+const KeyFeatures = ({ cardContent }: any) => {
+  // const data = [
+  //   {
+  //     src: carParking,
+  //     title: "Interactive Map",
+  //     description:
+  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map Discover what the park has to offer with it's many things to see and do with it's interactive map",
+  //   },
+  //   {
+  //     src: carParking,
+  //     title: "Interactive Map",
+  //     description:
+  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map Discover what the park has to offer with it's many things to see and do with it's interactive map",
+  //   },
+  //   {
+  //     src: carParking,
+  //     title: "Interactive Map",
+  //     description:
+  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map Discover what the park has to offer with it's many things to see and do with it's interactive map",
+  //   },
+  //   {
+  //     src: carParking,
+  //     title: "Interactive Map",
+  //     description:
+  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map Discover what the park has to offer with it's many things to see and do with it's interactive map",
+  //   },
+  //   {
+  //     src: carParking,
+  //     title: "Interactive Map",
+  //     description:
+  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
+  //   },
+  //   {
+  //     src: carParking,
+  //     title: "Interactive Map",
+  //     description:
+  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
+  //   },
+  //   {
+  //     src: carParking,
+  //     title: "Interactive Map",
+  //     description:
+  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
+  //   },
+  //   {
+  //     src: carParking,
+  //     title: "Interactive Map",
+  //     description:
+  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
+  //   },
+  //   {
+  //     src: carParking,
+  //     title: "Interactive Map",
+  //     description:
+  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
+  //   },
+  //   {
+  //     src: carParking,
+  //     title: "Interactive Map",
+  //     description:
+  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
+  //   },
+  // ];
   return (
     <div className={classes.container}>
       <section className={classes.section}>
@@ -79,12 +80,12 @@ const KeyFeatures = () => {
           </p>{" "}
         </div>
         <div className={classes.cards}>
-          {data?.map((item: any) => {
+          {cardContent?.map((item: any) => {
             return (
               <Card
                 title={item?.title}
                 description={item?.description}
-                src={item?.src}
+                src={SERVER_URL + item?.image}
               />
             );
           })}

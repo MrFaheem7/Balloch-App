@@ -1,61 +1,67 @@
-@import '../../../styles/variables.scss';
+@import "../../../styles/variables.scss";
 
 .container {
-    margin: auto;
-    width: 360px;
-    background-color: $color-grey-ligtest;
-    border-radius: 10px;
-    padding: 40px;
+  margin: auto;
+  width: 360px;
+  background-color: $color-grey-ligtest;
+  border-radius: 10px;
+  padding: 40px;
 
-    @media screen and (max-width: 400px) {
-        width: 90%;
+  @media screen and (max-width: 400px) {
+    width: 90%;
+  }
+
+  .form {
+    padding-bottom: 4vh;
+
+    .title {
+      margin: 0px;
+      font-family: Roboto, Helvetica, Arial, sans-serif;
+      font-size: 1.5rem;
+      line-height: 1.334;
+      letter-spacing: 0em;
+      text-align: left;
+      color: $color-light-green;
+      font-weight: 700;
+      padding: 16px;
     }
 
-    .form {
-        padding-bottom: 4vh;
-
-        .title {
-            margin: 0px;
-            font-family: Roboto, Helvetica, Arial, sans-serif;
-            font-size: 1.5rem;
-            line-height: 1.334;
-            letter-spacing: 0em;
-            text-align: left;
-            color: rgb(175, 228, 208);
-            font-weight: 700;
-            padding: 16px;
-        }
-
-        .inputContainer {
-
-            input,
-            textarea {
-                padding: 10px;
-                width: 100%;
-                color: gray;
-                border: 1px solid rgba(0, 0, 0, 0.12);
-                border-radius: 6px;
-                box-sizing: border-box;
-                outline: 0;
-                margin-bottom: 24px;
-            }
-        }
-
-        .submit {
-            width: 100%;
-            background-color: rgb(26, 81, 59);
-            color: white;
-            border-color: #d9d9d9;
-            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
-            border-radius: 6px;
-            font-size: 14px;
-
-            &:hover,
-            &:active {
-                border-color: #4096ff;
-                border-radius: 6px;
-                background-color: rgb(26, 81, 59);
-            }
-        }
+    .inputContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 16px;
+      input,
+      textarea {
+        padding: 10px;
+        width: 100%;
+        color: $color-grey-light;
+        border: 1px solid $color-grey-black;
+        border-radius: 6px;
+        box-sizing: border-box;
+        outline: 0;
+      }
+      p {
+        margin: 0;
+        color: $color-red;
+      }
     }
+
+    .submit {
+      width: 100%;
+      background-color: $color-green;
+      color: $color-white;
+      border-color: $color-white;
+      box-shadow: 0 2px 0 $color-grey-black;
+      border-radius: 6px;
+      font-size: 14px;
+
+      &:hover,
+      &:active {
+        border-color: $color-blue;
+        border-radius: 6px;
+        background-color: $color-green;
+      }
+    }
+  }
 }

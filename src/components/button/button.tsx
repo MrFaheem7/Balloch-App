@@ -14,8 +14,9 @@ import Img11 from '../../assets/png/Fairy Trail.png';
 import Img12 from '../../assets/png/Places of Interest.png';
 import Img13 from '../../assets/png/No Swimming.png';
 import Img14 from '../../assets/png/Lifebuoys_copy_1280x1280.png';
+import { SERVER_URL } from "../../utils/helpers";
 
-const Button = ({ src, text, }: ICard) => {
+const Button = ({ src, text, data }: ICard) => {
     const buttonsData = [
         {
             id: 0,
@@ -90,11 +91,11 @@ const Button = ({ src, text, }: ICard) => {
     ];
     return (
         <div className={classes.container} >
-            {buttonsData.map((button: any) => (
+            {data.map((button: any) => (
 
-                <button key={button.id} className={classes.btn}>
-                    <img src={button.src} alt="btn" />
-                    <p>{button.text}</p>
+                <button key={button._id} className={classes.btn}>
+                    <img src={SERVER_URL + button.image} alt="btn" />
+                    <p>{button.screen_name}</p>
                 </button>
             )
             )}

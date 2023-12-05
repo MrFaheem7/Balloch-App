@@ -3,13 +3,11 @@
 .container {
   margin: 0px 16px 16px 0px;
   max-width: 25%;
-  overflow: hidden;
 
   @media screen and (max-width: 800px) {
     max-width: 100%;
     margin-right: 0px;
   }
-
 
   .card {
     text-align: center;
@@ -32,16 +30,11 @@
 
     .description {
       font-size: 14px;
-      color: rgb(153, 153, 167);
+      color: $color-grey-light;
       line-height: 25px;
-      height: 12vh;
+      height: 13vh;
       overflow: hidden;
-
-      &:hover {
-        overflow: visible;
-        height: auto;
-      }
-
+      text-overflow: clip;
     }
 
     .title {
@@ -51,23 +44,26 @@
       letter-spacing: 0em;
       font-weight: 700;
       font-size: 16px;
-      color: rgb(175, 228, 208);
+      color: $color-light-green;
     }
-
   }
+}
+
+.container:hover .card .description {
+  overflow: visible;
+  height: auto;
+  text-overflow: clip;
 }
 
 .container:hover {
   border-radius: 10px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, .1);
+  box-shadow: 0 0 30px $color-grey-black;
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
-  transition: -webkit-transform .2s;
-  transition: transform .2s;
-  transition: transform .2s, -webkit-transform .2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
   width: 25%;
-  height: auto;
-  overflow: visible;
 
   @media screen and (max-width: 800px) {
     width: 100%;

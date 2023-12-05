@@ -1,5 +1,6 @@
 @import "../styles//variables.scss";
 .btn {
+  // display: inline;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -28,4 +29,8 @@
   background-color: $color-green;
   border: 1px solid $color-green;
   color: $color-white;
+}
+
+.inVisible {
+  display: none;
 }

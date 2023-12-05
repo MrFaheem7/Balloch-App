@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import Header from "./header/header";
 import MainView from "./view/MainView";
 import Section from "./section/Section";
@@ -9,45 +9,60 @@ import HowitWorks from "./section/HowitWorks";
 import Card from "../../components/common/Card/Card";
 import Button from "../../components/button/button";
 import ContactUs from "./contact/ContactUs";
+import { HTTP_CLIENT } from "../../utils/config";
+import { ENDPOINTS } from "../../utils/helpers";
 
 const MainPage = () => {
-  let mybutton = document.getElementById("btn-back-to-top");
-  window.onscroll = function () {
-    scrollFunction();
-  };
+  const [data, setData] = useState([])
+  const [content, setContent] = useState([])
+  const [cardContent, setCardContent] = useState([])
+  useEffect(() => {
+    HTTP_CLIENT.get(ENDPOINTS.GETALL).then((response) => {
+      console.log(response.data.result, 'response');
+      setData(response.data.result)
+    })
+    HTTP_CLIENT.get(ENDPOINTS.GETCONTENTS).then((response) => {
+      console.log(response.data.result, 'response');
+      setContent(response.data.result)
 
-  const scrollFunction = () => {
-    if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
-    ) {
-      if (mybutton) {
-        mybutton.style.display = "block";
-      }
-    } else {
-      if (mybutton) {
-        mybutton.style.display = "none";
-      }
+    })
+    HTTP_CLIENT.get(ENDPOINTS.GETCONTENTSCARDS).then((response) => {
+      console.log(response.data.result, 'response');
+      setCardContent(response.data.result)
+    })
+  }, [])
+  const [visible, setVisible] = useState(false);
+
+  const handletoggle = () => {
+    const scroll = document.documentElement.scrollTop;
+    if (scroll > 300) {
+      setVisible(true)
     }
-  };
-  const scrollButton = () => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  };
+    else if (scroll <= 300) {
+      setVisible(false)
+    }
+  }
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
+  window.addEventListener("scroll", handletoggle)
   return (
     <>
       <MainView />
-      <Section />
-      <Button />
+      <Section cardContent={cardContent} />
+      <Button data={data} />
       <HowitWorks />
       <ContactUs />
       <footer>
         <Footer />
       </footer>
       <button
-        onClick={scrollButton}
+        onClick={scrollToTop}
         type="button"
-        className={classes.btn}
+        className={visible ? classes.btn : classes.inVisible}
         id="btn-back-to-top"
       >
         <i className="fas fa-arrow-up"></i>

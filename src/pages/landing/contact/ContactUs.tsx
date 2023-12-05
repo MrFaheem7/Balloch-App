@@ -3,6 +3,8 @@ import classes from "./ContactUs.module.scss";
 import { Button } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { HTTP_CLIENT } from "../../../utils/config";
+import { ENDPOINTS } from "../../../utils/helpers";
 
 const ContactUs = () => {
   const formik = useFormik({
@@ -12,12 +14,20 @@ const ContactUs = () => {
       message: "",
     },
     validationSchema: yup.object().shape({
-      email: yup.string().email().required("Email is required"),
-      fullName: yup.string().required("Email is required"),
-      message: yup.string().required("Email is required"),
+      email: yup.string().email().required("Email is Required !"),
+      fullName: yup.string().required("Name is Required !"),
+      message: yup.string().required("Required !"),
     }),
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: (values: any) => {
+      const params = {
+        full_name: values.fullName,
+        email: values.email,
+        message: values.message
+      }
+      HTTP_CLIENT.post(ENDPOINTS.SENDFEEDBACK, params).then((res) => {
+        console.log(res);
+        formik.resetForm()
+      }).catch(() => { })
     },
   });
   return (
@@ -38,8 +48,8 @@ const ContactUs = () => {
             onChange={formik.handleChange("fullName")}
             onBlur={formik.handleBlur("fullName")}
           />
-          {formik.errors.email && formik.touched.email && (
-            <p>{formik.errors.email}</p>
+          {formik.errors.fullName && formik.touched.fullName && (
+            <p>{formik.errors.fullName}</p>
           )}
           <input
             type="text"
@@ -48,6 +58,9 @@ const ContactUs = () => {
             onChange={formik.handleChange("email")}
             onBlur={formik.handleBlur("email")}
           />
+          {formik.errors.email && formik.touched.email && (
+            <p>{formik.errors.email}</p>
+          )}
           <textarea
             rows={3}
             placeholder="Your Message"
@@ -55,6 +68,9 @@ const ContactUs = () => {
             onChange={formik.handleChange("message")}
             onBlur={formik.handleBlur("message")}
           />
+          {formik.errors.message && formik.touched.message && (
+            <p>{formik.errors.message}</p>
+          )}
         </div>
         <Button type="submit" className={classes.submit}>
           Submit
