@@ -1,66 +1,68 @@
 @import "../../../styles/variables.scss";
+.maincontainer {
+  padding-top: 100px;
+  .container {
+    margin: auto;
+    width: 360px;
+    background-color: $color-grey-ligtest;
+    border-radius: 10px;
+    padding: 40px;
 
-.container {
-  margin: auto;
-  width: 360px;
-  background-color: $color-grey-ligtest;
-  border-radius: 10px;
-  padding: 40px;
-
-  @media screen and (max-width: 400px) {
-    width: 90%;
-  }
-
-  .form {
-    padding-bottom: 4vh;
-
-    .title {
-      margin: 0px;
-      font-family: Roboto, Helvetica, Arial, sans-serif;
-      font-size: 1.5rem;
-      line-height: 1.334;
-      letter-spacing: 0em;
-      text-align: left;
-      color: $color-light-green;
-      font-weight: 700;
-      padding: 16px;
+    @media screen and (max-width: 400px) {
+      width: 90%;
     }
 
-    .inputContainer {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 16px;
-      input,
-      textarea {
-        padding: 10px;
+    .form {
+      padding-bottom: 4vh;
+
+      .title {
+        margin: 0px;
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-size: 1.5rem;
+        line-height: 1.334;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $color-light-green;
+        font-weight: 700;
+        padding: 16px;
+      }
+
+      .inputContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 16px;
+        input,
+        textarea {
+          padding: 10px;
+          width: 100%;
+          color: $color-grey-light;
+          border: 1px solid $color-grey-black;
+          border-radius: 6px;
+          box-sizing: border-box;
+          outline: 0;
+        }
+        p {
+          margin: 0;
+          color: $color-red;
+        }
+      }
+
+      .submit {
         width: 100%;
-        color: $color-grey-light;
-        border: 1px solid $color-grey-black;
-        border-radius: 6px;
-        box-sizing: border-box;
-        outline: 0;
-      }
-      p {
-        margin: 0;
-        color: $color-red;
-      }
-    }
-
-    .submit {
-      width: 100%;
-      background-color: $color-green;
-      color: $color-white;
-      border-color: $color-white;
-      box-shadow: 0 2px 0 $color-grey-black;
-      border-radius: 6px;
-      font-size: 14px;
-
-      &:hover,
-      &:active {
-        border-color: $color-blue;
-        border-radius: 6px;
         background-color: $color-green;
+        color: $color-white;
+        border-color: $color-white;
+        box-shadow: 0 2px 0 $color-grey-black;
+        border-radius: 6px;
+        font-size: 14px;
+
+        &:hover,
+        &:active {
+          border-color: $color-blue;
+          border-radius: 6px;
+          background-color: $color-green;
+        }
       }
     }
   }

@@ -18,16 +18,16 @@ const MainPage = () => {
   const [cardContent, setCardContent] = useState([])
   useEffect(() => {
     HTTP_CLIENT.get(ENDPOINTS.GETALL).then((response) => {
-      console.log(response.data.result, 'response');
+
       setData(response.data.result)
     })
     HTTP_CLIENT.get(ENDPOINTS.GETCONTENTS).then((response) => {
-      console.log(response.data.result, 'response');
+
       setContent(response.data.result)
 
     })
     HTTP_CLIENT.get(ENDPOINTS.GETCONTENTSCARDS).then((response) => {
-      console.log(response.data.result, 'response');
+
       setCardContent(response.data.result)
     })
   }, [])
@@ -51,14 +51,13 @@ const MainPage = () => {
   window.addEventListener("scroll", handletoggle)
   return (
     <>
-      <MainView />
+      <MainView content={content} />
       <Section cardContent={cardContent} />
       <Button data={data} />
       <HowitWorks />
-      <ContactUs />
-      <footer>
-        <Footer />
-      </footer>
+      <div id="contact">
+        <ContactUs />
+      </div>
       <button
         onClick={scrollToTop}
         type="button"

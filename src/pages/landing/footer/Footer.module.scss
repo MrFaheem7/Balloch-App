@@ -41,14 +41,15 @@
     font-size: 22px;
     letter-spacing: 1px;
   }
+  .navlink {
+    text-decoration: none;
+    color: white;
+  }
   p {
     margin: 0;
     margin-bottom: 8px;
     margin-top: 8px;
     letter-spacing: 1px;
     cursor: pointer;
-  }
-  p:hover {
-    text-decoration: underline;
   }
 }

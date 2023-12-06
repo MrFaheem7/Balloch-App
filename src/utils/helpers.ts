@@ -6,6 +6,8 @@ const ENDPOINTS = {
     GETALL: 'screen_type/getAll',
     GETCONTENTS: 'contents/getContents',
     GETCONTENTSCARDS: 'contents_cards/getContentsCards',
+    GETPRIVACYPOLICY: 'privacyPolicy/getPrivacyPolicy',
+    GETTERMANDCONDITIONS: "termsAndConditions/getTermsAndConditions"
 };
 
 export { BASE_URL, ENDPOINTS, SERVER_URL };

@@ -1,6 +1,7 @@
 @import "../../../styles/variables.scss";
 .container {
   position: relative;
+
   .mainContainer {
     background-image: url(../../../assets//jpeg/bg-image.jpg);
     background-size: cover;
@@ -40,7 +41,7 @@
     span {
       margin: 0px;
       line-height: 35px;
-      font-weight: 600;
+      // font-weight: 600;
       text-align: justify;
       @media screen and (max-width: 899px) {
         text-align: center;
