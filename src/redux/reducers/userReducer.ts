@@ -8,6 +8,7 @@ const userData = {
 
 const initialState: IUser = {
     user: userData,
+
     authToken: '',
 }
 

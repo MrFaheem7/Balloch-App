@@ -8,9 +8,12 @@ const Routes = (): JSX.Element => {
         <>
             <ReactRoutes>
                 <Route element={<Layout />}>
-                    <Route path='/' element={<MainPage />} />
-                    <Route path='/termandcondition' element={<TermAndConditions />}></Route>
-                    <Route path='/privacypolicy' element={<PrivacyPolicy />}></Route>
+                    <Route path="/:id?" element={<MainPage />} />
+                    <Route
+                        path="/termandcondition"
+                        element={<TermAndConditions />}
+                    ></Route>
+                    <Route path="/privacypolicy" element={<PrivacyPolicy />}></Route>
                 </Route>
             </ReactRoutes>
         </>

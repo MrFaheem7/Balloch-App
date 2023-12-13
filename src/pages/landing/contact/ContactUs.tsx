@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import classes from "./ContactUs.module.scss";
 import { Button } from "react-bootstrap";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { HTTP_CLIENT } from "../../../utils/config";
 import { ENDPOINTS } from "../../../utils/helpers";
+import { useLocation } from "react-router-dom";
 
 const ContactUs = () => {
+  // const [focus, setFocus] = useState<any>(false);
+  // const ref = useRef<HTMLInputElement | any>();
+  // const location = useLocation();
+  // console.log(location);
+  // if (location?.hash === "/#contact") {
+  //   setFocus(true);
+  // }
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     ref.current?.focus();
+  //   }, 1000);
+  // }, [setFocus]);
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -22,14 +36,17 @@ const ContactUs = () => {
       const params = {
         full_name: values.fullName,
         email: values.email,
-        message: values.message
-      }
-      HTTP_CLIENT.post(ENDPOINTS.SENDFEEDBACK, params).then((res) => {
-        console.log(res);
-        formik.resetForm()
-      }).catch(() => { })
+        message: values.message,
+      };
+      HTTP_CLIENT.post(ENDPOINTS.SENDFEEDBACK, params)
+        .then((res) => {
+          console.log(res);
+          formik.resetForm();
+        })
+        .catch(() => {});
     },
   });
+
   return (
     <div className={classes.maincontainer}>
       <div className={classes.container}>
@@ -43,6 +60,7 @@ const ContactUs = () => {
           <div className={classes.title}>Get In Touch With Us</div>
           <div className={classes.inputContainer}>
             <input
+              // ref={ref}
               type="text"
               placeholder="Full Name"
               value={formik.values.fullName}

@@ -4,81 +4,26 @@ import Card from "../../../components/common/Card/Card";
 import carParking from "../../../assets/png/Car Parking.png";
 import { SERVER_URL } from "../../../utils/helpers";
 
-const KeyFeatures = ({ cardContent }: any) => {
-  // const data = [
-  //   {
-  //     src: carParking,
-  //     title: "Interactive Map",
-  //     description:
-  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map Discover what the park has to offer with it's many things to see and do with it's interactive map",
-  //   },
-  //   {
-  //     src: carParking,
-  //     title: "Interactive Map",
-  //     description:
-  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map Discover what the park has to offer with it's many things to see and do with it's interactive map",
-  //   },
-  //   {
-  //     src: carParking,
-  //     title: "Interactive Map",
-  //     description:
-  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map Discover what the park has to offer with it's many things to see and do with it's interactive map",
-  //   },
-  //   {
-  //     src: carParking,
-  //     title: "Interactive Map",
-  //     description:
-  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map Discover what the park has to offer with it's many things to see and do with it's interactive map",
-  //   },
-  //   {
-  //     src: carParking,
-  //     title: "Interactive Map",
-  //     description:
-  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
-  //   },
-  //   {
-  //     src: carParking,
-  //     title: "Interactive Map",
-  //     description:
-  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
-  //   },
-  //   {
-  //     src: carParking,
-  //     title: "Interactive Map",
-  //     description:
-  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
-  //   },
-  //   {
-  //     src: carParking,
-  //     title: "Interactive Map",
-  //     description:
-  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
-  //   },
-  //   {
-  //     src: carParking,
-  //     title: "Interactive Map",
-  //     description:
-  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
-  //   },
-  //   {
-  //     src: carParking,
-  //     title: "Interactive Map",
-  //     description:
-  //       "Discover what the park has to offer with it's many things to see and do with it's interactive map.",
-  //   },
-  // ];
+const KeyFeatures = ({ cardContent, content }: any) => {
+
   return (
     <div className={classes.container}>
-      <section className={classes.section}>
-        <h1>Key Features</h1>
-        <div className={classes.description}>
-          {" "}
-          <p>
-            BallochParkGuide guarantees to vastly improve your overall
-            experience, making your visit <br /> well-prepared and more
-            enjoyable with the following key features.
-          </p>{" "}
-        </div>
+      <div className={classes.section}>
+        {content?.map((item: any, index: any) => {
+          return (
+            <>
+              {item.heading === "Key Features" && (
+                <>
+                  <h1>{item.heading}</h1>
+                  <div className={classes.description}>
+                    {" "}
+                    <p>{item.text}</p>{" "}
+                  </div>
+                </>
+              )}
+            </>
+          );
+        })}
         <div className={classes.cards}>
           {cardContent?.map((item: any) => {
             return (
@@ -90,7 +35,7 @@ const KeyFeatures = ({ cardContent }: any) => {
             );
           })}
         </div>
-      </section>{" "}
+      </div>
     </div>
   );
 };

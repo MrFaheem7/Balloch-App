@@ -1,6 +1,10 @@
 @import "../../../styles//variables.scss";
 .maincontainer {
-  margin-top: 3%;
+  margin: 3% 200px;
+
+  @media screen and (max-width: 900px) {
+    margin: 3% auto;
+  }
   .section {
     text-align: center;
     margin-bottom: 4px;
@@ -8,12 +12,16 @@
   .container {
     padding: 12px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 10px;
     gap: 8px;
+
+    @media screen and (max-width: 900px) {
+      flex-wrap: wrap;
+    }
   }
   img {
     border-radius: 10px;
@@ -22,17 +30,46 @@
   }
   .col1 {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+  }
+  .col2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .col1,
+  .col2,
+  .container {
+    @media screen and (max-width: 900px) {
+      justify-content: center;
+    }
+  }
+
+  .select_marker {
+    text-align: center;
+    margin-bottom: 4px;
+    background-color: $color-grey-ligtest;
+    color: $color-grey-light;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: none;
+    width: 60%;
+
+    @media screen and (max-width: 900px) {
+      width: 60%;
+    }
   }
   .card {
     text-align: center;
     margin-bottom: 4px;
     background-color: $color-grey-ligtest;
     color: $color-grey-light;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0px 0px 6px white;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: none;
+    width: 60%;
   }
   h1 {
     margin: 0;
@@ -44,7 +81,22 @@
     font-weight: 700;
     padding: 10px;
   }
-  p {
-    padding: 8px;
+
+  .description {
+    font-size: small;
+    margin-top: 0px;
   }
+}
+h1 {
+  margin: 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.334;
+  letter-spacing: 0em;
+  color: $color-light-green;
+  font-weight: 700;
+  padding: 10px;
+}
+p {
+  padding: 8px;
 }

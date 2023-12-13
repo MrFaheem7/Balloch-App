@@ -8,4 +8,5 @@ export interface ICard {
     description?: string | ReactNode;
     src?: string;
     cardClassName?: string
+    isLoading?: any,
 }
